@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Simulasi Kredit</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Aplikasi Simulasi Kredit</h1>
+
+        <form @submit.prevent="hitungPembayaranBulanan">
+            <label for="jumlahPinjaman">Jumlah Pinjaman:</label>
+            <input type="number" v-model="jumlahPinjaman" />
+
+            <label for="tingkatBunga">Tingkat Bunga:</label>
+            <input type="number" v-model="tingkatBunga" />
+
+            <label for="jangkaWaktuPinjaman">Jangka Waktu Pinjaman (dalam bulan):</label>
+            <input type="number" v-model="jangkaWaktuPinjaman" />
+
+            <button type="submit">Hitung</button>
+        </form>
+
+        <div v-if="pembayaranBulanan > 0">
+            <h2>Pembayaran Bulanan:</h2>
+            <p>{{ pembayaranBulanan.toFixed(2) }}</p>=""
+        </div>
+    </div>
+
+    <!-- Sertakan Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <!-- Sertakan file JS utama Anda -->
+    <script src="main.js"></script>
+</body>
+</html>
